@@ -10,22 +10,60 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Material Lite CSS -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
     <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@next"></script>
   </head>
 
   <body>
-    <!-- App Title -->
-    <section id="appTitle">
-      <h1>Vuemer</h1>
-    </section>
+    <main>
+      <!-- App Title -->
+      <section id="appTitle">
+        <h1>Vuemer</h1>
+      </section>
 
-    <!-- Timer -->
-    <section id="timer">
-      <div id="time">{{ hours }}:{{ minutes }}:{{ seconds }}</div>
-      <button @click="startTimer">Start</button>
-      <button @click="stopTimer">Stop</button>
-    </section>
+      <!-- Timer -->
+      <section id="timer">
+        <!-- Values -->
+        <div id="time">
+          <h3>{{ hours }}:{{ minutes }}:{{ seconds }}</h3>
+        </div>
+
+        <!-- Buttons -->
+        <div id="buttons">
+          <button
+            class="
+              mdl-button mdl-js-button
+              mdl-button--fab mdl-button--colored
+              mdl-js-ripple-effect
+            "
+            @click="startTimer"
+          >
+            <i class="material-icons">timer</i>
+          </button>
+          <button
+            class="
+              mdl-button mdl-js-button
+              mdl-button--fab mdl-button--colored
+              mdl-js-ripple-effect
+            "
+            @click="stopTimer"
+          >
+            <i class="material-icons">timer_off</i>
+          </button>
+        </div>
+      </section>
+    </main>
 
     <!-- JS -->
     <script src="app.js"></script>
