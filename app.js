@@ -30,6 +30,13 @@ const app = Vue.createApp({
     stopTimer() {
       clearInterval(this.intervalId);
     },
+    restartTimer() {
+      this.hours = 0;
+      this.minutes = 0;
+      this.seconds = 0;
+
+      clearInterval(this.intervalId);
+    },
   },
 });
 
