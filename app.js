@@ -1,16 +1,16 @@
 const app = Vue.createApp({
   data() {
     return {
-      hours: 0,
-      minutes: 0,
       seconds: 0,
+      minutes: 0,
+      hours: 0,
+
       intervalId: null,
       isDisabled: false,
     };
   },
 
   methods: {
-    // TODO fix timer bug if user clicks "Start" twice or more, maybe same for "Stop"
     startTimer() {
       const intervalId = setInterval(() => {
         this.seconds++;
@@ -34,12 +34,12 @@ const app = Vue.createApp({
       this.isDisabled = false;
     },
     restartTimer() {
-      this.hours = 0;
-      this.seconds = 0;
       this.minutes = 0;
-      this.isDisabled = false;
+      this.seconds = 0;
+      this.hours = 0;
 
       clearInterval(this.intervalId);
+      this.isDisabled = false;
     },
   },
 });
