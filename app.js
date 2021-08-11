@@ -5,6 +5,7 @@ const app = Vue.createApp({
       minutes: 0,
       seconds: 0,
       intervalId: null,
+      isDisabled: false,
     };
   },
 
@@ -26,14 +27,17 @@ const app = Vue.createApp({
       }, 1000);
 
       this.intervalId = intervalId;
+      this.isDisabled = true;
     },
     stopTimer() {
       clearInterval(this.intervalId);
+      this.isDisabled = false;
     },
     restartTimer() {
       this.hours = 0;
-      this.minutes = 0;
       this.seconds = 0;
+      this.minutes = 0;
+      this.isDisabled = false;
 
       clearInterval(this.intervalId);
     },
