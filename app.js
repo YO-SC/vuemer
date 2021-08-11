@@ -45,3 +45,18 @@ const app = Vue.createApp({
 });
 
 app.mount("#timer");
+
+// Pop-up Modal
+let dialog = document.querySelector("dialog");
+let showDialogButton = document.querySelector("#show-dialog");
+
+if (!dialog.showModal) {
+  dialogPolyfill.registerDialog(dialog);
+}
+
+showDialogButton.addEventListener("click", function () {
+  dialog.showModal();
+});
+dialog.querySelector(".close").addEventListener("click", function () {
+  dialog.close();
+});
